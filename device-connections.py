@@ -5,7 +5,7 @@ import requests
 #Salinity (ppt),Dissolved Oxygen (mg/L),pH (standard units),Secchi Depth (m),Water Depth (m),Water Temp (?C),Air Temp-Celsius,Air Temp (?F)
 
 #TODO:
-# Add access tokens for all devices attached to dataset and make new corresponding URLS to send through payload
+#Delete NaNs from CSV
 ACCESS_TOKEN_PH = "kkm2m2zwqqzp4r3cn8wc"
 URL_PH = f"https://thingsboard.cloud/api/v1/{ACCESS_TOKEN_PH}/telemetry"
 
