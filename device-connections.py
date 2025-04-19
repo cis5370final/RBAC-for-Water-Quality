@@ -1,11 +1,8 @@
 import time
 import pandas as pd
 import requests
-#kkm2m2zwqqzp4r3cn8wc
-#Salinity (ppt),Dissolved Oxygen (mg/L),pH (standard units),Secchi Depth (m),Water Depth (m),Water Temp (?C),Air Temp-Celsius,Air Temp (?F)
 
-#TODO:
-#Delete NaNs from CSV
+
 ACCESS_TOKEN_PH = "kkm2m2zwqqzp4r3cn8wc"
 URL_PH = f"https://thingsboard.cloud/api/v1/{ACCESS_TOKEN_PH}/telemetry"
 
@@ -23,6 +20,8 @@ URL_SAL = f"https://thingsboard.cloud/api/v1/{ACCESS_TOKEN_SAL}/telemetry"
 
 
 df=pd.read_csv("BKB_WaterQualityData_2020084.csv")
+#Salinity (ppt),Dissolved Oxygen (mg/L),pH (standard units),Secchi Depth (m),Water Depth (m),Water Temp (?C),Air Temp-Celsius,Air Temp (?F)
+
 df_no_nan = df.dropna()
 for i, row in df_no_nan.iterrows():
     payload1={
