@@ -9,8 +9,8 @@ CUSTOMER_USERS = {
     "Public Viewer": {"username": "william_miller453@fiu.edu", "password": "123456"},
 }
 
-DEVICE_ID = "1808cd70-1bc6-11f0-86ac-951bbb28eae1"
-DASHBOARD_ID = "20ad3a60-1bcb-11f0-86ac-951bbb28eae1"
+DEVICE_ID = "DEVICE ID FROM UI GOES HERE"
+DASHBOARD_ID = "DASHBOARD ID FROM UI GOES HERE"
 
 # ========== UTILITIES ==========
 
