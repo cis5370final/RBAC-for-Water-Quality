@@ -9,8 +9,8 @@ CUSTOMER_USERS = {
     "Public Viewer": {"username": "william_miller453@fiu.edu", "password": "123456"},
 }
 
-DEVICE_ID = "DEVICE ID FROM UI GOES HERE"
-DASHBOARD_ID = "DASHBOARD ID FROM UI GOES HERE"
+DEVICE_ID = "DEVICE ID FROM THINGSBOARD CLOUD GOES HERE"
+DASHBOARD_ID = "DASHBOARD ID FROM THINGSBOARD CLOUD GOES HERE"
 
 # ========== UTILITIES ==========
 
@@ -82,18 +82,19 @@ def run_customer_user_tests():
             can_post_telemetry(token, DEVICE_ID)
             can_view_telemetry(token, DEVICE_ID)
             can_download_report(token)
+            can_view_dashboard(token, DASHBOARD_ID)
 
         elif role == "Data Analyst":
             can_view_telemetry(token, DEVICE_ID)
             can_download_report(token)
             can_send_alert(token)
+            can_view_dashboard(token, DASHBOARD_ID)
 
         elif role == "Public Viewer":
             can_view_dashboard(token, DASHBOARD_ID)
 
         elif role == "General IP":
-            # No specific API calls, login-only test
-            pass
+            can_view_dashboard(token, DASHBOARD_ID)
 
 if __name__ == "__main__":
     run_customer_user_tests()
