@@ -2,7 +2,7 @@ import time
 import pandas as pd
 import requests
 
-
+#Access token is provided by Thingsboard Cloud to be able to send 
 ACCESS_TOKEN_PH = "kkm2m2zwqqzp4r3cn8wc"
 URL_PH = f"https://thingsboard.cloud/api/v1/{ACCESS_TOKEN_PH}/telemetry"
 
@@ -20,9 +20,9 @@ URL_SAL = f"https://thingsboard.cloud/api/v1/{ACCESS_TOKEN_SAL}/telemetry"
 
 
 df=pd.read_csv("BKB_WaterQualityData_2020084.csv")
-#Salinity (ppt),Dissolved Oxygen (mg/L),pH (standard units),Secchi Depth (m),Water Depth (m),Water Temp (?C),Air Temp-Celsius,Air Temp (?F)
-
+#Salinity (ppt), Dissolved Oxygen (mg/L), pH (standard units), Secchi Depth (m),Water Depth (m),Water Temp (?C),Air Temp-Celsius,Air Temp (?F)
 df_no_nan = df.dropna()
+
 for i, row in df_no_nan.iterrows():
     payload1={
         "pH": row["pH (standard units)"]
